@@ -1,6 +1,6 @@
 baseURL = "http://localhost:1313/"
 languageCode = "zh-cn"
-title = "Hao Mingbai"
+title = "Haoming Bai"
 theme = "blowfish"
 relativeURLs = true
 canonifyURLs = false
@@ -33,7 +33,7 @@ taxonomies = { tag = "tags" }
     showTaxonomies = true
 
 [params.author]
-  name = "Hao Mingbai"
+  name = "Haoming Bai"
   image = "/avatar.png"
   headline = "工程师 / 创作者"
   bio = "专注于 Web 与平台工程"

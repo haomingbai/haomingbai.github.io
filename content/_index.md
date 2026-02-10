@@ -1,9 +1,9 @@
 ---
-title: "Hao Mingbai"
+title: "Haoming Bai"
 description: "现代个人主页与博客"
 ---
 
-# 你好，我是 Hao Mingbai
+# 你好，我是 Haoming Bai
 
 工程师 / 创作者，专注于 Web 与平台工程。喜欢打造简洁可靠的产品与开发体验。
 
