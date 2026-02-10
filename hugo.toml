@@ -4,8 +4,10 @@ title = "Haoming Bai"
 theme = "blowfish"
 relativeURLs = true
 canonifyURLs = false
-paginate = 10
 enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
 
 taxonomies = { tag = "tags" }
 
@@ -34,7 +36,7 @@ taxonomies = { tag = "tags" }
 
 [params.author]
   name = "Haoming Bai"
-  image = "/avatar.png"
+  image = "avatar.png"
   headline = "工程师 / 创作者"
   bio = "专注于 Web 与平台工程"
 

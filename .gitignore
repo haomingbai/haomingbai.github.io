@@ -1,8 +1,8 @@
 # Hugo build output / caches
-public/
-resources/
-.hugo_build.lock
-hugo_stats.json
+/public/
+/resources/
+/.hugo_build.lock
+/hugo_stats.json
 
 # Logs & temporary files
 *.log
