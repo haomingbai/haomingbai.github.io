@@ -1,29 +1,36 @@
 ---
-title: "第二篇：工程实践小记"
-date: 2026-02-11
-tags: ["notes", "cpp"]
-summary: "记录一次工程实践中的关键点。"
+title: "第二篇：数学公式小记"
+date: 2026-02-10
+tags: ["notes", "maths"]
+summary: "记录Hugo博客中数学公式排版的关键点。"
 featuredImage: "cover.png"
 toc: true
 ---
 
-这是一篇示例文章，用于展示 C++ 代码块与图片引用。
+{{< katex >}}
 
-## 代码示例（C++）
+## 数学公式（行内）
 
-```cpp
-#include <iostream>
+这是一个数学公式，表达一个简单的线性方程：$x+y=1$。
 
-int main() {
-  std::cout << "Hello, Hugo!" << std::endl;
-  return 0;
-}
-```
+## 数学公式（公式块）
 
-## 图片示例（方式 A：Markdown 引用）
+$$
+\begin{cases}
+  x_1 + x_2 + x_3 = 1 \\\
+  x_1 + 2x_2 + x_3 = 3 \\\
+  x_1 + x_2 + 2x_3 = 4
+\end{cases}
+$$
 
-![](img1.png)
+然后是一个简单的矩阵：
 
-## 图片示例（方式 B：figure shortcode）
+$$
+\begin{bmatrix}
+  1 & 2 & 3 \\\
+  4 & 5 & 6 \\\
+  7 & 8 & 9
+\end{bmatrix}
+$$
 
-{{< figure src="img1.png" alt="示例图片" caption="带说明的示例图片" >}}
+注意，在Hugo中，公式换行需要三个斜杠。
