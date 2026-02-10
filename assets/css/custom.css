@@ -1,0 +1,13 @@
+pre, code {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+code {
+  white-space: pre;
+}

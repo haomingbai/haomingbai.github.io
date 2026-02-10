@@ -1,0 +1,56 @@
+baseURL = "http://localhost:1313/"
+languageCode = "zh-cn"
+title = "Hao Mingbai"
+theme = "blowfish"
+relativeURLs = true
+canonifyURLs = false
+paginate = 10
+enableRobotsTXT = true
+
+taxonomies = { tag = "tags" }
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = true
+    lineNumbersInTable = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[params]
+  colorScheme = "ocean"
+  defaultAppearance = "system"
+  autoSwitchAppearance = true
+  showReadingTime = true
+  enableSearch = true
+  customCSS = ["css/custom.css"]
+
+  [params.article]
+    showTableOfContents = true
+    showTaxonomies = true
+
+[params.author]
+  name = "Hao Mingbai"
+  image = "/avatar.png"
+  headline = "工程师 / 创作者"
+  bio = "专注于 Web 与平台工程"
+
+[params.comments]
+  enabled = false
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+  [[menu.main]]
+    name = "Blog"
+    pageRef = "/posts/"
+    weight = 20
+  [[menu.main]]
+    name = "About"
+    pageRef = "/about/"
+    weight = 30
