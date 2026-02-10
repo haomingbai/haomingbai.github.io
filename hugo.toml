@@ -30,9 +30,19 @@ taxonomies = { tag = "tags" }
   enableSearch = true
   customCSS = ["css/custom.css"]
 
+  [params.homepage]
+    layout = "page"
+    showRecent = true
+    showRecentItems = 5
+    showMoreLink = true
+    showMoreLinkDest = "/posts/"
+
   [params.article]
     showTableOfContents = true
     showTaxonomies = true
+    showAuthor = false
+    showAuthorBottom = false
+    showAuthorsBadges = false
 
 [params.author]
   name = "Haoming Bai"

@@ -1,0 +1,56 @@
+<!doctype html>
+<html
+  lang="{{ with site.Params.isoCode | default (site.LanguageCode | default `en`) }}{{- . -}}{{ end }}"
+  dir="{{ cond (site.Params.rtl | default false) `rtl` `ltr` }}"
+  class="scroll-smooth"
+  data-default-appearance="{{ site.Params.defaultAppearance | default `light` }}"
+  data-auto-appearance="{{ site.Params.autoSwitchAppearance | default `true` }}">
+  {{- partial "head.html" . -}}
+  {{- partialCached "init.html" . -}}
+
+  {{ $bodyColor := "text-lg leading-7 bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral" }}
+  <body class="{{ $bodyColor }} {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
+    <div class="bf-layout">
+      <aside class="bf-sidebar">
+        <div class="bf-sidebar-inner">
+          {{ partial "sidebar/profile.html" . }}
+
+          {{ $headerLayout := site.Params.header.layout | default "basic" }}
+          {{ $header := print "header/" $headerLayout ".html" }}
+          {{ if templates.Exists ( printf "partials/%s" $header ) }}
+            {{ partial $header . }}
+          {{ else }}
+            {{ partial "header/basic.html" . }}
+          {{ end }}
+        </div>
+      </aside>
+
+      <div class="bf-right relative flex flex-col">
+        <main id="main-content" class="grow bf-main">
+          {{ block "main" . }}{{ end }}
+          {{ if and (site.Params.footer.showScrollToTop | default true) }}
+            {{- partial "scroll-to-top.html" . -}}
+          {{ end }}
+        </main>
+        {{- partial "footer.html" . -}}
+        {{ if site.Params.enableSearch | default false }}
+          {{- partial "search.html" . -}}
+        {{ end }}
+      </div>
+    </div>
+  </body>
+
+  {{ if site.Params.buymeacoffee.globalWidget | default false }}
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="{{ site.Params.buymeacoffee.identifier }}"
+      data-description="Support me on Buy me a coffee!"
+      {{ with site.Params.buymeacoffee.globalWidgetMessage }}data-message="{{ . }}"{{ end }}
+      {{ with site.Params.buymeacoffee.globalWidgetColor | default `#FFDD00` }}data-color="{{ . }}"{{ end }}
+      {{ with site.Params.buymeacoffee.globalWidgetPosition }}data-position="{{ . }}"{{ end }}
+      data-x_margin="18"
+      data-y_margin="18"></script>
+  {{ end }}
+</html>

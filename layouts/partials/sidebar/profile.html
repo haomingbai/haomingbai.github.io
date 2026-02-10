@@ -1,0 +1,46 @@
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
+<div class="bf-sidebar-profile">
+  <div class="bf-sidebar-profile__top">
+    {{ with .Site.Params.Author.image }}
+      {{ $authorImage := "" }}
+      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{ $authorImage = resources.GetRemote . }}
+      {{ else }}
+        {{ $authorImage = resources.Get . }}
+      {{ end }}
+      {{ if $authorImage }}
+        {{ $final := $authorImage }}
+        {{ $squareImage := $authorImage }}
+        {{ if not (or $disableImageOptimization (eq $authorImage.MediaType.SubType "svg")) }}
+          {{ $final = $authorImage.Fill (print "160x160 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
+          {{ $shortSide := int (math.Min $authorImage.Width $authorImage.Height) }}
+          {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
+        {{ end }}
+        <a class="bf-sidebar-profile__avatar" href="{{ "" | relLangURL }}" aria-label="Home">
+          <img
+            class="bf-sidebar-profile__avatarImg"
+            width="80"
+            height="80"
+            alt="{{ $.Site.Params.Author.name | default `Author` }}"
+            src="{{ $final.RelPermalink }}"
+            data-zoom-src="{{ $squareImage.RelPermalink }}">
+        </a>
+      {{ end }}
+    {{ end }}
+
+    <div class="bf-sidebar-profile__meta">
+      <div class="bf-sidebar-profile__name">
+        <a href="{{ "" | relLangURL }}">{{ .Site.Params.Author.name | default .Site.Title }}</a>
+      </div>
+      {{ with .Site.Params.Author.headline }}
+        <div class="bf-sidebar-profile__headline">{{ . | markdownify }}</div>
+      {{ end }}
+    </div>
+  </div>
+
+  {{ with .Site.Params.Author.bio }}
+    <div class="bf-sidebar-profile__bio">{{ . | markdownify }}</div>
+  {{ end }}
+
+  <div class="bf-sidebar-profile__links">{{ partialCached "author-links.html" . }}</div>
+</div>
