@@ -10,9 +10,27 @@
 
   {{ $bodyColor := "text-lg leading-7 lg:text-xl lg:leading-8 bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral" }}
   <body class="{{ $bodyColor }} {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('bf:sidebar-collapsed') === '1') {
+            document.documentElement.setAttribute('data-bf-sidebar', 'collapsed')
+          }
+        } catch (e) {}
+      })()
+    </script>
     <div class="bf-layout">
       <aside class="bf-sidebar">
         <div class="bf-sidebar-inner">
+          <button
+            id="bf-sidebar-toggle"
+            class="bf-sidebar-toggle"
+            type="button"
+            aria-label="折叠侧边栏"
+            aria-expanded="true"
+            title="折叠侧边栏">
+            <span class="bf-sidebar-toggle__icon">{{ partial "icon.html" "chevron-down" }}</span>
+          </button>
           {{ partial "sidebar/profile.html" . }}
 
           {{ $headerLayout := site.Params.header.layout | default "basic" }}
@@ -38,6 +56,36 @@
         {{ end }}
       </div>
     </div>
+    <script>
+      (function () {
+        const storageKey = 'bf:sidebar-collapsed'
+        const root = document.documentElement
+        const btn = document.getElementById('bf-sidebar-toggle')
+        if (!btn) return
+
+        function isCollapsed() {
+          return root.getAttribute('data-bf-sidebar') === 'collapsed'
+        }
+
+        function syncButton(collapsed) {
+          btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true')
+          btn.setAttribute('aria-label', collapsed ? '展开侧边栏' : '折叠侧边栏')
+          btn.setAttribute('title', collapsed ? '展开侧边栏' : '折叠侧边栏')
+        }
+
+        syncButton(isCollapsed())
+
+        btn.addEventListener('click', function () {
+          const next = !isCollapsed()
+          if (next) root.setAttribute('data-bf-sidebar', 'collapsed')
+          else root.removeAttribute('data-bf-sidebar')
+          syncButton(next)
+          try {
+            localStorage.setItem(storageKey, next ? '1' : '0')
+          } catch (e) {}
+        })
+      })()
+    </script>
   </body>
 
   {{ if site.Params.buymeacoffee.globalWidget | default false }}
