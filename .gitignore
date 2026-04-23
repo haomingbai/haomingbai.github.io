@@ -31,3 +31,6 @@ pnpm-debug.log*
 # Optional: local environment files
 .env
 .env.*
+
+# OpenAI files
+.codex
