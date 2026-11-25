@@ -9,7 +9,7 @@ description: "现代个人主页与博客"
 
 软件工程本科生 / 工程师 / 创作者，关注平台工程与高质量软件交付。喜欢打造简洁可靠的产品与开发体验。
 
-[Blog](/posts/) · [About](/about/) · [GitHub](https://github.com/haomingbai) · [Email](mailto:haomingbai@mail.nwpu.edu.cn) · [Resume](/resume.pdf)
+[Blog](/posts/) · [About](/about/) · [GitHub](https://github.com/haomingbai) · [Email](mailto:haomingbai@mail.nwpu.edu.cn) · [Resume](/resume.pdf) · [Resume (EN)](/resume-en.pdf)
 
 ---
 

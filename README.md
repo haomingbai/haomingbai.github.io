@@ -55,7 +55,8 @@ Hugo 只会从特定目录参与构建，理解这些目录能减少维护困惑
 │   ├── avatar.png           # 作者头像（供主题读取与处理）
 │   └── css/custom.css       # 自定义样式
 ├── static/                  # 原样拷贝到站点根目录（不经处理）
-│   └── resume.pdf           # /resume.pdf（About 页面下载链接）
+│   ├── resume.pdf           # /resume.pdf（中文简历）
+│   └── resume-en.pdf        # /resume-en.pdf（英文简历）
 ├── layouts/                 # 可选：覆盖/扩展主题模板（目前尽量保持为空）
 ├── themes/blowfish/         # Blowfish 主题（submodule）
 └── .github/workflows/       # CI/CD：构建并发布到 GitHub Pages
@@ -109,7 +110,7 @@ toc: true
 ## 资源放置约定
 
 - 作者头像：放到 [assets/avatar.png](assets/avatar.png)，并在 [hugo.toml](hugo.toml) 配置 `params.author.image = "avatar.png"`。
-- 简历 PDF：放到 [static/resume.pdf](static/resume.pdf)，页面访问路径为 `/resume.pdf`。
+- 简历 PDF：中文放到 [static/resume.pdf](static/resume.pdf)，英文放到 [static/resume-en.pdf](static/resume-en.pdf)，访问路径分别为 `/resume.pdf` 与 `/resume-en.pdf`。
 
 ## 部署（GitHub Pages）
 
