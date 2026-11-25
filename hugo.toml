@@ -49,7 +49,7 @@ taxonomies = { tag = "tags" }
   name = "Haoming Bai"
   image = "avatar.png"
   headline = "工程师 / 创作者"
-  bio = "专注于 Web 与平台工程"
+  bio = "C++ 后端 / 基础架构方向，关注高吞吐网络服务、异步 I/O 与性能优化"
 
 [params.comments]
   enabled = false
