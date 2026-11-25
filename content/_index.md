@@ -7,7 +7,7 @@ description: "现代个人主页与博客"
 
 # 你好，我是 Haoming Bai
 
-软件工程本科生 / 工程师 / 创作者，关注平台工程与高质量软件交付。喜欢打造简洁可靠的产品与开发体验。
+软件工程本科生，C++ 后端 / 基础架构方向。关注高吞吐网络服务、异步 I/O 与性能优化，喜欢打造简洁可靠的产品与开发体验。
 
 [Blog](/posts/) · [About](/about/) · [GitHub](https://github.com/haomingbai) · [Email](mailto:haomingbai@mail.nwpu.edu.cn) · [Resume](/resume.pdf) · [Resume (EN)](/resume-en.pdf)
 
