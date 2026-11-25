@@ -19,24 +19,27 @@ description: "现代个人主页与博客"
 
 ## 技术能力
 
-- **语言**：常用 Python、C++；熟悉 C、Java；了解 Lua；JavaScript/TypeScript（按需使用）
-- **工作流**：Linux、Shell、SSH、(Neo)Vim、VS Code、Git、GitHub、GitLab（自建）、$\\LaTeX$
-- **工程实践**：CMake、GitHub Actions、容器化实践、并发与性能优化
+- **语言**：C++20（主要）、C；熟悉 JavaScript；了解 Java、Python；CET-4 603 / CET-6 568
+- **方向**：高吞吐网络服务、事件驱动架构、异步 I/O、并发控制、性能压测与调优
+- **工程实践**：Linux（6 年）、Shell、Git、CMake、Podman、Vim/VS Code、GitHub Actions、$\LaTeX$
 
 ## 项目
 
-- [**算法板子**（algorithm_example）](https://github.com/haomingbai/algorithm_example) — 各类基础算法与数据结构的 C++ 实现（B+ 树、AC 自动机、可持久化线段树、SA-IS 等），配套注释与 CI
-- [**bsrvcore**](http://github.com/haomingbai/bsrvcore) — 轻量级异步 HTTP 服务器框架（Boost.Asio），线程池执行器、SSE、连接/超时/流控等能力
-- [**NCOJ / bjudger**](https://github.com/haomingbai/bjudger) — 多语言 OJ 平台：微服务化拆分、REST API 文档、Seccomp 沙箱、分布式 Judger
-- [**西瓜报名**（program_test）](https://github.com/haomingbai/program_test) — 西北工业大学 C/C++/Python 课程考试报名系统：微信云开发 + 小程序，支持单场 3000+ 并发报名
+- [**bnio**](https://github.com/haomingbai/bnio) — C++20 异步 I/O 库：自研 P2300 子集与 sender/receiver 调度模型，统一 I/O、定时器、DNS、TLS；TCP echo 对比 Asio/epoll 峰值 1.25 倍
+- [**bsrvcore**](https://github.com/haomingbai/bsrvcore) — 轻量级 C++20 异步 HTTP 服务器框架：Reactor 多核架构承载 Servlet 式编程模型，提供 AOP、路由、会话与插件化能力，同机回环微基准 70 万以上 RPS（峰值 85 万）
+- [**西瓜报名**（program_test）](https://github.com/haomingbai/program_test) — 校内程序设计考试报名系统：微信云开发 + NoSQL 事务保证名额一致性与 CAS 统一认证，单场考试 3000+ 用户报名
+- [**算法板子**（algorithm_example）](https://github.com/haomingbai/algorithm_example) — C++ 算法模板库（29 stars）：B+ 树、AC 自动机、可持久化线段树、SA-IS 等
 
 ## 荣誉 / 亮点
 
-- 2025 ICPC 陕西省赛：银牌
-- 2025 CCPC 郑州站：铜牌
-- 英语：CET-4 603，CET-6 503（可英语工作交流）
+- ICPC 2025 陕西省赛：银牌
+- CCPC 2025 郑州站：铜牌
+- 2026 美赛 ICM：Honorable Mention
+- 英语：CET-4 603，CET-6 568
 
 ## 经历 / 教育
 
+- 2026.07—2026.10：腾讯科技（深圳）· TEG 云架构平台部（实习）
+- 2026.01—2026.02：深圳市大数据研究院（香港中文大学（深圳））（实习）
 - 2023.09—2027.06：西北工业大学 · 软件工程（本科在读）
-- GPA：3.45/4.1（专业前 35%）
+- GPA：3.44/4.1
